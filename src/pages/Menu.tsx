@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Search } from 'lucide-react';
 import { useCart } from '@/contexts/CartContext';
 import { toast } from 'sonner';
+import MenuRecommendations from '@/components/MenuRecommendations';
 
 interface MenuItem {
   id: string;
@@ -71,6 +71,13 @@ const Menu = () => {
   const categories = ['all', 'appetizers', 'mains', 'desserts', 'beverages'];
   const dietaryOptions = ['all', 'vegetarian', 'vegan', 'gluten-free'];
 
+  // Add user preferences (in a real app, this would come from user profile)
+  const userPreferences = {
+    dietary: ['vegetarian'],
+    favoriteCategories: ['mains'],
+    priceRange: [10, 30] as [number, number]
+  };
+
   const filteredItems = menuItems.filter(item => {
     const matchesSearch = item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          item.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -98,6 +105,12 @@ const Menu = () => {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gradient">Our Menu</h1>
           <p className="text-xl text-muted-foreground">Discover our carefully curated selection of dishes</p>
         </div>
+
+        {/* AI Recommendations */}
+        <MenuRecommendations 
+          menuItems={menuItems} 
+          userPreferences={userPreferences}
+        />
 
         {/* Search and Filters */}
         <div className="mb-8 space-y-4">
