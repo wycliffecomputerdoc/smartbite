@@ -79,7 +79,7 @@ const MenuRecommendations = ({ menuItems, userPreferences }: MenuRecommendations
             <Card key={item.id} className="card-hover overflow-hidden">
               <div className="aspect-video overflow-hidden">
                 <img
-                  src={item.image}
+                  src={item.image || '/placeholder.svg'}
                   alt={item.name}
                   className="w-full h-full object-cover"
                 />

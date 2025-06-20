@@ -1,6 +1,6 @@
 
 export class VoiceService {
-  private recognition: SpeechRecognition | null = null;
+  private recognition: any = null;
   private synthesis: SpeechSynthesis;
   private isListening = false;
 
@@ -8,10 +8,10 @@ export class VoiceService {
     this.synthesis = window.speechSynthesis;
     
     if ('webkitSpeechRecognition' in window) {
-      this.recognition = new webkitSpeechRecognition();
+      this.recognition = new (window as any).webkitSpeechRecognition();
       this.setupRecognition();
     } else if ('SpeechRecognition' in window) {
-      this.recognition = new SpeechRecognition();
+      this.recognition = new (window as any).SpeechRecognition();
       this.setupRecognition();
     }
   }
@@ -38,13 +38,13 @@ export class VoiceService {
 
       this.isListening = true;
 
-      this.recognition.onresult = (event) => {
+      this.recognition.onresult = (event: any) => {
         const transcript = event.results[0][0].transcript;
         this.isListening = false;
         resolve(transcript);
       };
 
-      this.recognition.onerror = (event) => {
+      this.recognition.onerror = (event: any) => {
         this.isListening = false;
         reject(new Error(`Speech recognition error: ${event.error}`));
       };
@@ -89,12 +89,5 @@ export class VoiceService {
 
   getIsListening(): boolean {
     return this.isListening;
-  }
-}
-
-declare global {
-  interface Window {
-    webkitSpeechRecognition: any;
-    SpeechRecognition: any;
   }
 }
