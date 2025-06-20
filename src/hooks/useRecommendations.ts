@@ -5,9 +5,11 @@ import { OpenAIService } from '@/services/openai';
 interface MenuItem {
   id: string;
   name: string;
-  category: string;
-  dietary: string[];
+  description: string;
   price: number;
+  category: string;
+  image: string;
+  dietary: string[];
   rating: number;
 }
 
