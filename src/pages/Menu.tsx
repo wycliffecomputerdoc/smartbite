@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -32,7 +33,7 @@ const Menu = () => {
       description: 'Premium beef patty with truffle sauce, arugula, and aged cheddar',
       price: 24.99,
       category: 'mains',
-      image: 'https://images.unsplash.com/photo-1618160702438-9b02ab6515c9?w=400',
+      image: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop&crop=center',
       dietary: ['gluten-free-option'],
       rating: 4.8
     },
@@ -42,7 +43,7 @@ const Menu = () => {
       description: 'Quinoa, roasted vegetables, feta cheese, and tahini dressing',
       price: 18.99,
       category: 'mains',
-      image: 'https://images.unsplash.com/photo-1493962853295-0fd70327578a?w=400',
+      image: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop&crop=center',
       dietary: ['vegetarian', 'gluten-free'],
       rating: 4.6
     },
@@ -52,7 +53,7 @@ const Menu = () => {
       description: 'Mixed greens, seasonal fruits, nuts, and house vinaigrette',
       price: 14.99,
       category: 'appetizers',
-      image: 'https://images.unsplash.com/photo-1469041797191-50ace28483c3?w=400',
+      image: 'https://images.unsplash.com/photo-1540420773420-3366772f4999?w=400&h=300&fit=crop&crop=center',
       dietary: ['vegan', 'gluten-free'],
       rating: 4.4
     },
@@ -62,9 +63,49 @@ const Menu = () => {
       description: 'Warm chocolate cake with molten center and vanilla ice cream',
       price: 12.99,
       category: 'desserts',
-      image: 'https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=400',
+      image: 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&h=300&fit=crop&crop=center',
       dietary: ['vegetarian'],
       rating: 4.9
+    },
+    {
+      id: '5',
+      name: 'Grilled Salmon',
+      description: 'Atlantic salmon with lemon herb butter and roasted vegetables',
+      price: 26.99,
+      category: 'mains',
+      image: 'https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=400&h=300&fit=crop&crop=center',
+      dietary: ['gluten-free', 'keto'],
+      rating: 4.7
+    },
+    {
+      id: '6',
+      name: 'Margherita Pizza',
+      description: 'Wood-fired pizza with fresh mozzarella, basil, and San Marzano tomatoes',
+      price: 19.99,
+      category: 'mains',
+      image: 'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&h=300&fit=crop&crop=center',
+      dietary: ['vegetarian'],
+      rating: 4.5
+    },
+    {
+      id: '7',
+      name: 'Caesar Salad',
+      description: 'Crisp romaine lettuce, parmesan cheese, croutons, and caesar dressing',
+      price: 16.99,
+      category: 'appetizers',
+      image: 'https://images.unsplash.com/photo-1546793665-c74683f339c1?w=400&h=300&fit=crop&crop=center',
+      dietary: ['vegetarian'],
+      rating: 4.3
+    },
+    {
+      id: '8',
+      name: 'Tiramisu',
+      description: 'Classic Italian dessert with mascarpone, coffee, and cocoa',
+      price: 10.99,
+      category: 'desserts',
+      image: 'https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=400&h=300&fit=crop&crop=center',
+      dietary: ['vegetarian'],
+      rating: 4.6
     }
   ];
 
